@@ -1,0 +1,5 @@
+{
+    "ssid": "your-network-ssid",
+    "key": "your-network-key",
+    "mdns": "victron-mqtt"
+}
