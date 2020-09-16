@@ -214,8 +214,6 @@ void VEDirectText::handleLine(DynamicJsonDocument &updates, char *line)
 #define FT_LEN 100
         char formattedValue[FT_LEN];
         char formattedUnits[FT_LEN];
-        // Is this next line needed?
-        // snprintf(formattedValue, FT_LEN, "?(%s)", value);
         for (JsonVariant v : fieldDefs)
         {
             JsonObject fieldDef = v.as<JsonObject>();
@@ -370,7 +368,7 @@ void VEDirectText::formatValue(char *destValue,
     }
     else if (strcmp(vicType, "map_ar") == 0)
     {
-        int reasons = atoi(value);
+        int reasons = strtoul(value, 0, 0);
         if (reasons == 0)
         {
             snprintf(destValue, sizeValue, "No alarm");
@@ -399,10 +397,10 @@ void VEDirectText::formatValue(char *destValue,
     }
     else if (strcmp(vicType, "map_or") == 0)
     {
-        int reasons = atoi(value);
+        int reasons = strtoul(value, 0, 0);
         if (reasons == 0)
         {
-            snprintf(destValue, sizeValue, "Not off");
+            snprintf(destValue, sizeValue, "On");
         }
         else
         {
@@ -429,7 +427,7 @@ void VEDirectText::formatValue(char *destValue,
     else if (strcmp(vicType, "map_cs") == 0)
     {
         int found = 0;
-        int code = atoi(value);
+        int code = strtoul(value, 0, 0);
         JsonArray map = g_victronDefs["map_cs"];
         for (JsonVariant v : map)
         {
@@ -451,7 +449,7 @@ void VEDirectText::formatValue(char *destValue,
     else if (strcmp(vicType, "map_err") == 0)
     {
         int found = 0;
-        int code = atoi(value);
+        int code = strtoul(value, 0, 0);
         JsonArray map = g_victronDefs["map_err"];
         for (JsonVariant v : map)
         {
@@ -473,7 +471,7 @@ void VEDirectText::formatValue(char *destValue,
     else if (strcmp(vicType, "map_mode") == 0)
     {
         int found = 0;
-        int code = atoi(value);
+        int code = strtoul(value, 0, 0);
         JsonArray map = g_victronDefs["map_mode"];
         for (JsonVariant v : map)
         {
@@ -495,7 +493,7 @@ void VEDirectText::formatValue(char *destValue,
     else if (strcmp(vicType, "map_mppt") == 0)
     {
         int found = 0;
-        int code = atoi(value);
+        int code = strtoul(value, 0, 0);
         JsonArray map = g_victronDefs["map_mppt"];
         for (JsonVariant v : map)
         {

@@ -59,43 +59,55 @@
   ],
   "map_or": [
     {
-      "key": "0x00000001",
+      "key": 1,
       "value": "No input power"
     },
     {
-      "key": "0x00000002",
+      "key": 2,
       "value": "Switched off (power switch)"
     },
     {
-      "key": "0x00000004",
+      "key": 4,
       "value": "Switched off (device mode register)"
     },
     {
-      "key": "0x00000008",
+      "key": 8,
       "value": "Remote input"
     },
     {
-      "key": "0x00000010",
+      "key": 16,
       "value": "Protection active"
     },
     {
-      "key": "0x00000020",
+      "key": 32,
       "value": "Paygo"
     },
     {
-      "key": "0x00000040",
+      "key": 64,
       "value": "BMS"
     },
     {
-      "key": "0x00000080",
+      "key": 128,
       "value": "Engine shutdown detection"
     },
     {
-      "key": "0x00000100",
+      "key": 256,
       "value": "Analysing input voltage"
     }
   ],
   "map_pid": [
+    {
+      "key": "0x200",
+      "value": "BMV-600S"
+    },
+    {
+      "key": "0x201",
+      "value": "BMV-602S"
+    },
+    {
+      "key": "0x202",
+      "value": "BMV-600HS"
+    },
     {
       "key": "0x203",
       "value": "BMV-700"
